@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Damay Café – Bolos e Tortas</title>
+<meta name="description" content="Bolos e tortas artesanais da Damay Café, com entrega em Itajaí. Peça pelo WhatsApp.">
+<meta name="theme-color" content="#4a2a20">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Damay">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Damay Café – Bolos e Tortas">
+<meta property="og:description" content="Bolos e tortas artesanais com entrega em Itajaí. Peça pelo WhatsApp!">
+<meta property="og:image" content="icon-512.png">
+<style>
+:root{--br:#4a2a20;--pk:#d72269;--pk2:#860122;--cr:#f7f1ea;--card:#fffdfa;--tx:#2a1a15;--mut:#7d6a62;--ln:#e6d8cc;--sans:Montserrat,system-ui,-apple-system,"Segoe UI",sans-serif;--scr:"Dancing Script","Segoe Script",cursive;box-sizing:border-box;color-scheme:light}
+*{box-sizing:border-box}html{scroll-padding-top:110px;scroll-behavior:smooth}
+body{margin:0;background:var(--cr);color:var(--tx);font:15px/1.5 var(--sans);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--br);z-index:10}
+button{font:inherit;cursor:pointer;border:0}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--br);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+.logo{font:800 22px var(--sans);letter-spacing:.14em}
+.cartbtn{background:var(--pk);color:#fff;border-radius:8px;padding:9px 14px;font-weight:600;font-size:14px}
+main{max-width:760px;margin:auto;padding:0 18px 90px}
+.hero{margin:0 -18px;background:var(--pk);color:#fff;padding:34px 22px 30px}
+.hero .s{font:600 34px/1.1 var(--scr);margin:0 0 8px}
+.hero h1{font:500 15px/1.5 var(--sans);margin:0 0 14px;max-width:420px}
+.hero p{margin:0;font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.9}
+.tabs{display:flex;gap:22px;overflow-x:auto;position:sticky;top:calc(48px + env(safe-area-inset-top,0px));background:var(--cr);z-index:8;margin:0 -18px;padding:0 18px;border-bottom:1px solid var(--ln)}
+.tab{background:none;color:var(--mut);padding:14px 0 11px;font-weight:600;font-size:14px;border-bottom:3px solid transparent;white-space:nowrap}
+.tab.on{color:var(--br);border-color:var(--pk)}
+.list{margin-top:6px}
+.item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--ln)}
+.ph{flex:0 0 92px;height:92px;border-radius:10px;background:var(--br) center/cover;color:#fff;display:grid;place-items:center;font:600 40px var(--scr)}
+.ph.b{background-color:var(--pk2)}
+.info{flex:1;display:flex;flex-direction:column}
+.info h3{margin:0 0 3px;font:600 16px var(--sans)}
+.info p{margin:0 0 8px;color:var(--mut);font-size:13px;flex:1}
+.row{display:flex;justify-content:space-between;align-items:center}
+.price{font-weight:800;color:var(--pk2)}
+.add{background:none;border:1.5px solid var(--pk);color:var(--pk);border-radius:8px;padding:6px 14px;font-weight:600;font-size:13px}
+.add:active{background:var(--pk);color:#fff}
+h2{font:600 28px var(--scr);color:var(--br);margin:38px 0 10px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gal div{aspect-ratio:1;border-radius:10px;background:var(--br) center/cover}
+.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:18px;line-height:1.7}
+.btn{display:inline-block;background:var(--pk);color:#fff;text-decoration:none;border-radius:8px;padding:11px 18px;font-weight:600;font-size:14px;margin:10px 8px 0 0}
+.btn.o{background:none;color:var(--br);border:1.5px solid var(--br)}
+footer{text-align:center;margin-top:40px;color:var(--mut)}footer b{font:600 22px var(--scr);color:var(--br)}
+.sheet{position:fixed;inset:0;background:#160d0b99;z-index:20;display:none;align-items:flex-end;justify-content:center}
+.sheet.on{display:flex}
+.panel{background:var(--cr);width:100%;max-width:560px;max-height:92%;overflow:auto;border-radius:18px 18px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px))}
+.panel h2{margin-top:0}
+input,select{width:100%;padding:12px;border:1px solid var(--ln);border-radius:8px;background:#fff;color:var(--tx);font:inherit;margin:4px 0 12px}
+label{font-size:12px;color:var(--mut);font-weight:600}
+.qty{white-space:nowrap}.qty button{width:30px;height:30px;border-radius:8px;background:var(--br);color:#fff;font-weight:700}
+.line{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--ln)}
+#toast{position:fixed;left:50%;top:calc(64px + env(safe-area-inset-top,0px));transform:translateX(-50%);background:var(--br);color:#fff;padding:10px 18px;border-radius:8px;z-index:30;display:none;max-width:90%;font-size:14px}
+</style></head><body>
+<header><span class="logo">DAMAY</span><button class="cartbtn" onclick="openCart()">Carrinho · <span id="cc">0</span> · <span id="ct">R$ 0,00</span></button></header>
+<div id="toast"></div>
+<main>
+<section class="hero"><div class="s">Seja Damay, seja feliz</div><h1>Bolos e tortas feitos na casa, entregues por nós em Itajaí.</h1><p>Entrega própria · Pix, cartão e dinheiro</p></section>
+<div class="tabs" id="tabs"></div>
+<div class="list" id="grid"></div>
+
+<section id="galsec" style="display:none"><h2>Nosso ambiente</h2><div class="gal" id="gal"></div></section>
+
+<h2>Onde estamos</h2>
+<div class="box"><b>Damay Café</b><br><span id="addr"></span><br><span style="color:var(--mut)">Seg a Sáb · 9h às 19h (ajustar)</span><br>
+<a class="btn" id="map" target="_blank" rel="noopener">Abrir no mapa</a></div>
+
+<h2>Fale com a gente</h2>
+<div class="box">Dúvidas, encomendas especiais ou pedidos grandes?<br>
+<a class="btn" id="wa" target="_blank" rel="noopener">WhatsApp</a><a class="btn o" id="tel">Ligar</a></div>
+<footer><b>A melhor fatia do seu dia</b></footer>
+</main>
+
+<div class="sheet" id="sheet" onclick="if(event.target===this)closeS()"><div class="panel" id="panel"></div></div>
+
+<script>
+// ===== CONFIGURAÇÃO: ajuste com os dados reais da Damay =====
+const CFG={addr:"Rua exemplo, 000 – Centro, Itajaí – SC",phone:"5547900000000",fee:6,pix:"chave-pix-da-damay"};
+// Fotos: em img de cada produto coloque o caminho (ex.: "fotos/cenoura.jpg"). Sem img, aparece um bloco colorido.
+const GAL=[]; // fotos do ambiente, ex.: ["fotos/loja1.jpg","fotos/loja2.jpg","fotos/loja3.jpg"]
+const P=[
+{id:1,c:"Bolos",n:"Bolo de Cenoura",d:"Massa fofinha com cobertura cremosa de chocolate.",p:48},
+{id:2,c:"Bolos",n:"Red Velvet",d:"Camadas aveludadas com recheio de cream cheese.",p:72},
+{id:3,c:"Bolos",n:"Ninho com Morango",d:"Creme de leite ninho e morangos frescos.",p:68},
+{id:4,c:"Bolos",n:"Bolo de Fubá",d:"Clássico caseiro, perfeito para o café.",p:36},
+{id:5,c:"Tortas",n:"Torta de Limão",d:"Base crocante, creme de limão e merengue.",p:65},
+{id:6,c:"Tortas",n:"Torta Holandesa",d:"Creme branco, biscoito e cobertura de chocolate.",p:70},
+{id:7,c:"Tortas",n:"Cheesecake Frutas Vermelhas",d:"Cremoso com calda artesanal.",p:78},
+{id:8,c:"Fatias",n:"Fatia de Bolo do Dia",d:"Pergunte pelo sabor ou escolha no pedido.",p:14},
+{id:9,c:"Fatias",n:"Fatia de Torta",d:"Torta do dia, individual.",p:18}];
+const C=["Todos","Bolos","Tortas","Fatias"];
+let cat="Todos",cart={};
+const $=s=>document.querySelector(s),R=v=>"R$ "+v.toFixed(2).replace(".",",");
+function tabs(){$("#tabs").innerHTML=C.map(c=>`<button class="tab ${c==cat?"on":""}" onclick="cat='${c}';tabs();grid()">${c}</button>`).join("")}
+function grid(){$("#grid").innerHTML=P.filter(x=>cat=="Todos"||x.c==cat).map(x=>`<div class="item"><div class="ph ${x.id%2?"":"b"}" ${x.img?`style="background-image:url(${x.img})"`:""}>${x.img?"":x.n[0]}</div><div class="info"><h3>${x.n}</h3><p>${x.d}</p><div class="row"><span class="price">${R(x.p)}</span><button class="add" onclick="add(${x.id})">Adicionar</button></div></div></div>`).join("")}
+function tot(){return Object.entries(cart).reduce((s,[i,q])=>s+q*P.find(x=>x.id==i).p,0)}
+function upd(){$("#cc").textContent=Object.values(cart).reduce((a,b)=>a+b,0);$("#ct").textContent=R(tot());try{localStorage.setItem("damay",JSON.stringify(cart))}catch(e){}}
+function toast(m){const t=$("#toast");t.textContent=m;t.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>t.style.display="none",3000)}
+function add(i){cart[i]=(cart[i]||0)+1;upd();toast("Adicionado ao carrinho")}
+function chg(i,d){cart[i]=(cart[i]||0)+d;if(cart[i]<=0)delete cart[i];upd();openCart()}
+function closeS(){$("#sheet").classList.remove("on")}
+function show(h){$("#panel").innerHTML=h;$("#sheet").classList.add("on")}
+function openCart(){
+ const ids=Object.keys(cart);
+ if(!ids.length)return show(`<h2>Carrinho</h2><p>Seu carrinho está vazio.</p><button class="btn" onclick="closeS()">Ver cardápio</button>`);
+ show(`<h2>Seu pedido</h2>${ids.map(i=>{const x=P.find(p=>p.id==i);return `<div class="line"><span>${x.n}<br><small class="price">${R(x.p*cart[i])}</small></span><span class="qty"><button onclick="chg(${i},-1)">−</button> ${cart[i]} <button onclick="chg(${i},1)">+</button></span></div>`}).join("")}
+ <div class="line"><span>Entrega</span><span>${R(CFG.fee)}</span></div>
+ <div class="line"><b>Total</b><b class="price">${R(tot()+CFG.fee)}</b></div><br>
+ <label>Nome</label><input id="fn" autocomplete="name">
+ <label>WhatsApp</label><input id="fp" type="tel" autocomplete="tel">
+ <label>Endereço de entrega (Itajaí)</label><input id="fa" autocomplete="street-address">
+ <label>Pagamento</label><select id="pay"><option>Pix</option><option>Cartão na entrega</option><option>Dinheiro na entrega</option></select>
+ <button class="btn" style="width:100%;margin:0" onclick="place()">Confirmar pedido</button>
+ <p style="font-size:12px;color:var(--mut)">Ao confirmar, o WhatsApp da Damay abre com o pedido pronto. É só enviar.</p>`)}
+function place(){
+ const n=$("#fn").value.trim(),p=$("#fp").value.trim(),a=$("#fa").value.trim();
+ if(!n||!p||!a)return toast("Preencha nome, telefone e endereço");
+ const pay=$("#pay").value,total=tot()+CFG.fee;
+ const items=Object.keys(cart).map(i=>{const x=P.find(y=>y.id==i);return "• "+cart[i]+"x "+x.n+" – "+R(x.p*cart[i])}).join("\n");
+ const msg="Olá, Damay! Quero fazer um pedido:\n\n"+items+"\n\nEntrega: "+R(CFG.fee)+"\n*Total: "+R(total)+"*\n\nNome: "+n+"\nWhatsApp: "+p+"\nEndereço: "+a+"\nPagamento: "+pay;
+ const url="https://wa.me/"+CFG.phone+"?text="+encodeURIComponent(msg);
+ cart={};upd();
+ show(`<h2>Quase lá!</h2><p>Envie a mensagem no WhatsApp para a Damay confirmar seu pedido.</p>${pay=="Pix"?`<p>Chave Pix: <b>${CFG.pix}</b></p>`:""}<a class="btn" href="${url}" target="_blank" rel="noopener">Abrir WhatsApp</a><button class="btn o" onclick="closeS()">Fechar</button>`);
+ window.open(url,"_blank")}
+$("#addr").textContent=CFG.addr;
+$("#map").href="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent("Damay Café "+CFG.addr);
+$("#wa").href="https://wa.me/"+CFG.phone+"?text="+encodeURIComponent("Olá, Damay! Gostaria de fazer um pedido.");
+$("#tel").href="tel:+"+CFG.phone;
+if(GAL.length){$("#galsec").style.display="block";$("#gal").innerHTML=GAL.map(g=>`<div style="background-image:url(${g})"></div>`).join("")}
+try{cart=JSON.parse(localStorage.getItem("damay"))||{}}catch(e){}
+tabs();grid();upd();
+if("serviceWorker"in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script></body></html>
